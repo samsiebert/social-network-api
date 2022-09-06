@@ -8,7 +8,7 @@ const PostSchema = new Schema(
       required: true,
       trim: true
     },
-    postText: {
+    postBody: {
         type: String,
         required: true,
         trim: true
@@ -44,8 +44,8 @@ const PostSchema = new Schema(
     return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
   });
 
-  // create the Pizza model using the PizzaSchema
+  
 const Post = model('Post', PostSchema);
 
-// export the Pizza model
+
 module.exports = Post
