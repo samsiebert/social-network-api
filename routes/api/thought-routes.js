@@ -20,13 +20,13 @@ const {
 router.route('/:thoughtId')
     .get(getThoughtById)
     .put(updateThought)
-    .post(createThought);
+    .post(createThought)
+    .delete(removeThought);
 
 // /api/thoughts/<userId>/<thoughtId>/reactions
 router
     .route('/:userId/:thoughtId/reactions')
-    .put(addReaction)
-    .delete(removeThought);
+    .put(addReaction);
 
 router
     .route('/:userId/:thoughtId/:reactionId')
