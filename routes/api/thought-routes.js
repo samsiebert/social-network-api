@@ -16,16 +16,17 @@ const {
  .get(getAllThoughts)
  .post(createThought);
 
-// /api/thoughts/<userId>
-router.route('/:thoughtId')
+// /api/thoughts/<thoughtId>
+router
+    .route('/:id')
     .get(getThoughtById)
     .put(updateThought)
     .post(createThought)
     .delete(removeThought);
 
-// /api/thoughts/<userId>/<thoughtId>/reactions
+// /api/thoughts/<thoughtId>/reactions
 router
-    .route('/:userId/:thoughtId/reactions')
+    .route('/:thoughtid/reactions')
     .put(addReaction);
 
 router
